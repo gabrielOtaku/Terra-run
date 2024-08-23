@@ -1,0 +1,130 @@
+:root {
+    --color-text: white;
+    --second-color: white;
+    --text-hover: darkgoldenrod;
+    --secondary-text: black;
+    --type-text: "Work Sans", sans-serif;
+    --color-Img: darkgoldenrod;
+}
+
+
+
+
+/* Paragraphe */
+p {
+    display: flex;
+    color: var(--color-text);
+    font-family: var(--type-text);
+    font-size: 1.4em;
+    padding: 0;
+    margin: 2.4rem;
+    margin-top: 2rem;
+    text-align: left;
+    align-items: left; 
+    justify-content: left;
+    transition: 0.4s;
+}
+
+em{
+    color: var(--text-hover);
+    font-style: italic;
+}
+
+h1 {
+    color: var(--color-text);
+    font-family: var(--type-text);
+    font-size: 3.5em;
+    display: flex;
+    margin-left: 7%;
+    margin-top: 5%;
+    border-radius: 50px;
+}
+
+/*Main*/
+.mainPage{
+    min-height: 120vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Image principale */
+
+.main_Photo img {
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    margin-top: 6%;
+    margin-left:82%;
+    overflow: hidden;
+    box-shadow: 0 0 25px var(--color-Img);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.main_Photo img:hover {
+    box-shadow: 0 0 35px var(--color-Img), 
+                0 0 65px var(--color-Img), 
+                0 0 120px var(--color-Img);
+}
+
+
+
+
+/*Animation du texte*/
+.text-animation{
+    font-size: 32px;
+    font-weight: 600;
+    min-width: 120px;
+    display: flex;
+    padding-left: 8%;
+    justify-content: left; 
+ }
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "";
+    color: var(--color-text);
+    animation: words 8s infinite;
+    opacity: 1;
+   
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    opacity: 1;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+ 
+}
+
+@keyframes cursor {
+    to{
+        border-left: 3px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%,
+    33%{
+        content: "Ethique";
+    }
+    34%,
+    66%{
+        content: "Passion";
+    }
+    67%,
+    100%{
+        content: "Qualité";
+    }
+}
+
+@keyframes typing {
+   from { width: 0}
+   to{width: 100%}
+}
